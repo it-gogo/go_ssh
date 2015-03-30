@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+ "struts-2.0.dtd">
+<struts>
+
+<!-- Struts2提供的拦截器 -->
+<package name="basePackage" extends="struts-default" >
+
+		<interceptors>
+		    <interceptor name="checkException" class="com.sb.core.Interceptor.ExceptionInterceptor" />
+			<interceptor-stack name="baseStack">
+                <interceptor-ref name="alias" />
+                <interceptor-ref name="servletConfig" />
+                <interceptor-ref name="i18n" />
+                <interceptor-ref name="prepare" />
+                <interceptor-ref name="chain" />
+                <interceptor-ref name="debugging" />
+                <interceptor-ref name="scopedModelDriven" />
+                <interceptor-ref name="modelDriven" />
+                <interceptor-ref name="fileUpload" />
+                <interceptor-ref name="checkbox" />
+                <interceptor-ref name="multiselect" />
+                <interceptor-ref name="staticParams" />
+                <interceptor-ref name="actionMappingParams" />
+                <interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*</param>
+                </interceptor-ref>
+                <interceptor-ref name="conversionError"/>
+                <!-- 配置方法级别的校验 -->
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                    <param name="validateAnnotatedMethodOnly">true</param>
+                </interceptor-ref>
+                <interceptor-ref name="workflow">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+                <!-- 
+		        <interceptor-ref name="checkException"/>
+		         -->
+            </interceptor-stack>
+		</interceptors>
+		
+		<!-- 配置默认拦截器栈 -->
+		<default-interceptor-ref name="baseStack" />
+		
+	  <global-results>
+	     <result   name="daoExc">/WEB-INF/errors/errorHttp.jsp</result>    
+	     <result   name="allExc">/WEB-INF/errors/sessionError.jsp</result>
+	     <result   name="runExc">/WEB-INF/errors/sessionError.jsp</result>
+	     <result   name="ajax">/WEB-INF/common/jsonData.jsp</result>
+	     <result   name="unvalid">/errors/sessionError.jsp</result>
+	     <result   name="noAuth">/WEB-INF/errors/noAuthError.jsp</result>
+	     <!-- 操作提示 -->
+	     <result   name="operationTips">/WEB-INF/common/operationTips.jsp</result>
+	  </global-results>
+	  <!-- 异常捕获  --> 
+	  <global-exception-mappings>  
+	    <!-- 程序内部错误异常 -->
+        <exception-mapping result="allExc" exception="com.sb.core.exception.ALLException"/> 
+         <!-- 运行期异常 -->
+        <exception-mapping result="runExc" exception="com.sb.core.exception.ALLRuntimeException"/> 
+         <!-- 数据库异常 -->
+        <exception-mapping result="daoExc" exception="com.sb.core.exception.DaoException"/> 
+       
+       </global-exception-mappings>
+	 
+</package>
+
+
+<!-- 系统信息配置 -->
+<package name="common" extends="basePackage" namespace="/common">
+	<action name="mainAction" class="mainAction">
+	   <result name="top">/WEB-INF/admin/top.jsp</result>
+	   <result name="center">/WEB-INF/admin/center.jsp</result>
+	   <result name="down">/WEB-INF/admin/down.jsp</result>
+	   <result name="left">/WEB-INF/admin/left.jsp</result>
+	   <result name="right">/WEB-INF/admin/right.jsp</result>
+	   <result name="main">/WEB-INF/admin/main.jsp</result>
+	</action>
+	
+	<!-- 后台登陆Action -->
+	<action name="loginAction" class="loginAction">
+		<result name="login">/WEB-INF/admin/login.jsp</result>
+		<result name="main"  type="redirectAction">
+			<param name="actionName">mainAction!findMain</param>
+		</result>
+	</action>
+   
+</package>
+
+ 
+</struts>

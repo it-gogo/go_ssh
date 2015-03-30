@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+ "struts-2.0.dtd">
+<struts>
+<!-- 基本信息的拦截器配置 -->
+<package name="sysmanage" extends="basePackage" namespace="/sysmanage">
+	<interceptors>
+	 	<interceptor name="sessionInterceptor" class="com.sb.interceptor.HSessionInterceptor" />
+		<interceptor-stack name="baseinfoStack">
+		    <interceptor-ref name="sessionInterceptor" />
+			<interceptor-ref name="baseStack" />
+		</interceptor-stack>
+	</interceptors>
+	<!-- 配置默认拦截器栈 -->
+	<default-interceptor-ref name="baseinfoStack" />
+	
+	
+	<!-- 后台菜单 -->
+	<action name="bmenuAction"  class="bmenuAction" >
+	   <result name="input">/WEB-INF/admin/sysmanage/bmenu/main.jsp</result>
+	   <result name="list">/WEB-INF/admin/sysmanage/bmenu/list.jsp</result>
+	   <result name="edit">/WEB-INF/admin/sysmanage/bmenu/edit.jsp</result>
+	</action>
+	<!-- 后台用户 -->
+	<action name="buserAction"  class="buserAction" >
+	   <result name="list">/WEB-INF/admin/sysmanage/buser/list.jsp</result>
+	   <result name="edit">/WEB-INF/admin/sysmanage/buser/edit.jsp</result>
+	   <result name="pw">/WEB-INF/admin/sysmanage/buser/modifypw.jsp</result>
+	   <result name="info">/WEB-INF/admin/sysmanage/buser/info.jsp</result>
+	</action>
+	
+	<!-- 角色管理 -->
+	<action name="roleAction"  class="roleAction" >
+	   <result name="list">/WEB-INF/admin/sysmanage/role/list.jsp</result>
+	   <result name="edit">/WEB-INF/admin/sysmanage/role/edit.jsp</result>
+	   <result name="buser">/WEB-INF/admin/sysmanage/role/buser.jsp</result>
+	</action>
+	
+</package>
+
+</struts>
