@@ -16,7 +16,7 @@
 	</div>
 	<div class="formbody">
 	    <div class="formtitle"><span>基本信息</span></div>
-	    <form action="bmenuAction!savexx.action" method="post" id="pform" >
+	    <form action="buserAction!savexx.action" method="post" id="pform" >
 	    	<input type="hidden"  name="vo.id" id="ids" value="${vo.id }"/>
     		<input type="hidden" name="vo.password" value="${vo.password }"    />
 		    <ul class="forminfo">

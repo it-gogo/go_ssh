@@ -113,6 +113,29 @@ function checkIsNumber(obj,length){
 	}
 }
 
+$(document).ready(function(){
+	if($("#checkPW")!=null && $("#checkPW").size()>0){
+		$("#checkPW").blur(function(){
+			if(checkNotEmtry(this,20)){
+				var obj=$("#rcheckPW").get(0);
+				if(obj.value!=""){
+					check(obj.value==this.value,"两次密码必须相同！",obj);
+				}
+			}
+		});
+	}
+	if($("#rcheckPW")!=null && $("#rcheckPW").size()>0){
+		$("#rcheckPW").blur(function(){
+			if(checkNotEmtry(this,20)){
+				var obj=$("#checkPW").get(0);
+				if(obj.value!=""){
+					check(obj.value==this.value,"两次密码必须相同！",this);
+				}
+			}
+		});
+	}
+});
+
 /**
  * 保存
  */
@@ -211,7 +234,7 @@ function deleteOne(id,url){
 			success:function(data){
 				var json = eval("("+data+")");
 	      		if(json.status==0){//操作失败
-	      			
+	      			CAlert(json.msg)
 	      		}else if(json.status==1){//操作成功
 	      			saveSuccess(json.msg);
 	      		}
@@ -301,6 +324,17 @@ function clearData(formid){
 		}
 	}
 }
+/**
+ * 隐藏
+ * @param id
+ */
+function hiddenDiv(id){
+	$("#"+id).fadeOut();
+}
+function showDiv(id){
+	$("#"+id).fadeIn();
+}
+
 /**
  * 上传文件
  * @param obj

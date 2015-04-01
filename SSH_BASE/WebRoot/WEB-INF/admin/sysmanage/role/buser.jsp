@@ -18,7 +18,7 @@
 	</div>
 	<div class="formbody">
 	    <div class="formtitle"><span>用户绑定</span></div>
-	    <form action="roleAction!bindUser.action" method="post" id="pform" >
+	    <form action="roleAction!bindUser.action" method="post" id="bindForm" >
 	    	<input type="hidden"  name="vo.id" id="ids" value="${vo.id }"/>
 		    <table class="tablelist">
 				<thead>
@@ -32,7 +32,7 @@
 				<tbody>
 					<s:iterator value="#request.list">
 						<tr>
-							<td><input name="" type="checkbox" value="${id }" <s:if test="checked">checked</s:if> /></td>
+							<td><input name="id" type="checkbox" value="${id }" <s:if test="checked">checked</s:if> /></td>
 							<td>${lname }</td>
 							<td>${uname }</td>
 						</tr>
