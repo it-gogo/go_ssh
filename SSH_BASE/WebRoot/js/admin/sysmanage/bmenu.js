@@ -29,8 +29,6 @@ var treebeforeClick = function(treeId, treeNode, clickFlag){
 		iframeObj.attr("src","bmenuAction!searchList.action?pmcode_right="+pId+"&or_mcode_right="+pId);
 	}
 };
-
-
 //树点击事件
 var treeOnClick = function(treeId, treeNode, clickFlag){
 };

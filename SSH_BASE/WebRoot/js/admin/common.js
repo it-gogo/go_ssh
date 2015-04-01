@@ -113,6 +113,29 @@ function checkIsNumber(obj,length){
 	}
 }
 
+$(document).ready(function(){
+	if($("#checkPW")!=null && $("#checkPW").size()>0){
+		$("#checkPW").blur(function(){
+			if(checkNotEmtry(this,20)){
+				var obj=$("#rcheckPW").get(0);
+				if(obj.value!=""){
+					check(obj.value==this.value,"两次密码必须相同！",obj);
+				}
+			}
+		});
+	}
+	if($("#rcheckPW")!=null && $("#rcheckPW").size()>0){
+		$("#rcheckPW").blur(function(){
+			if(checkNotEmtry(this,20)){
+				var obj=$("#checkPW").get(0);
+				if(obj.value!=""){
+					check(obj.value==this.value,"两次密码必须相同！",this);
+				}
+			}
+		});
+	}
+});
+
 /**
  * 保存
  */

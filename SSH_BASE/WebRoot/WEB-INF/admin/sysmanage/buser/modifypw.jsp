@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>修改密码</title>
-	<%@include file="/WEB-INF/admin/includefile.jsp" %>
+	<%@include file="/WEB-INF/admin/head.jsp" %>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/admin/sysmanage/password.js"></script>
   </head>
   

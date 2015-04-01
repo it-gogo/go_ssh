@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>用户信息</title>
-	<%@include file="/WEB-INF/admin/includefile.jsp" %>
+	<%@include file="/WEB-INF/admin/head.jsp" %>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/js/admin/sysmanage/buser.js"></script>
   </head>
   
@@ -18,32 +18,32 @@
 	    <form action="bmenuAction!savexx.action" method="post" id="pform" >
 		    <ul class="forminfo">
 			    <li>
-			    	<label>登录名<b>*</b></label>
-			    	${hloginInfo.lname }
+			    	<label>登录名</label>
+			    	<label>${hloginInfo.lname }</label>
 			    </li>
 			    <li>
-			    	<label>用户姓名<b>*</b></label>
-					${hloginInfo.uname }
+			    	<label>用户姓名</label>
+					<label>${hloginInfo.uname }</label>
 			    </li>
 			    <li>
 			    	<label>邮箱</label>
-					${hloginInfo.email }
+					<label>${hloginInfo.email }</label>
 			    </li>
 			    <li>
 			    	<label>电话</label>
-					${hloginInfo.telephone }
+					<label>${hloginInfo.telephone }</label>
 			    </li>
 			    <li>
 			    	<label>手机</label>
-					${hloginInfo.mobile }
+					<label>${hloginInfo.mobile }</label>
 			    </li>
 			    <li>
 			    	<label>QQ</label>
-					${hloginInfo.qq }
+					<label>${hloginInfo.qq }</label>
 			    </li>
 			    <li>
 			    	<label>备注</label>
-			    	${hloginInfo.remark }
+			    	<label>${hloginInfo.remark }</label>
 			    </li>
 			    <li>
 			    	<label>&nbsp;</label><input name="" type="button" class="btn" value="返回" onclick="history.go(-1)"/>

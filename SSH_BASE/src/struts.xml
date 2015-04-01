@@ -34,5 +34,6 @@
 	
 	<!-- 公共部分 -->
 	<include file="struts-common.xml"/> 
-	<include file="struts-sysmanage.xml"/> 
+	<include file="struts-sysmanage.xml"/>
+	<include file="struts-baseinfo.xml"/>  
 </struts>
