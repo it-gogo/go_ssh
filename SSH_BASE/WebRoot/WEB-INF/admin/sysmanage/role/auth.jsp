@@ -8,7 +8,7 @@
 			<span>权限设置</span>
 			<a href="javascript:void(0);" title="点击关闭" onclick="hiddenDiv('auth');"></a>
 		</div>
-		<div class="tipinfo">
+		<div class="tipinfo" style="">
 			<ul id="tree" class="ztree" ></ul>
 		</div>
 		<div class="tipbtn">

@@ -36,13 +36,11 @@
     </div>
 <script type="text/javascript">
 function hiddenSaveSuccess(){
-	var target=document.getElementById("saveSuccess");
-     target.style.display="none";
+	hiddenDiv("saveSuccess");
 	back();
 }
 function saveSuccess(msg){
-	var target=document.getElementById("saveSuccess");
-     target.style.display="block";
+	showDiv("saveSuccess");
      centreDiv("saveSuccess");
      if(typeof(msg)=="undefined" || msg==""){
 		msg="保存成功";

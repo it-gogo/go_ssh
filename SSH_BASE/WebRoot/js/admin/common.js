@@ -211,7 +211,7 @@ function deleteOne(id,url){
 			success:function(data){
 				var json = eval("("+data+")");
 	      		if(json.status==0){//操作失败
-	      			
+	      			CAlert(json.msg)
 	      		}else if(json.status==1){//操作成功
 	      			saveSuccess(json.msg);
 	      		}
@@ -301,6 +301,17 @@ function clearData(formid){
 		}
 	}
 }
+/**
+ * 隐藏
+ * @param id
+ */
+function hiddenDiv(id){
+	$("#"+id).fadeOut();
+}
+function showDiv(id){
+	$("#"+id).fadeIn();
+}
+
 /**
  * 上传文件
  * @param obj

@@ -7,6 +7,7 @@
 <link href="<%=request.getContextPath() %>/css/admin/style.css" rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath() %>/css/admin/select.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="<%=request.getContextPath() %>/js/jquery.js"></script>
+<script language="JavaScript" src="<%=request.getContextPath() %>/js/jquery.form.js"></script>
 <script language="JavaScript" src="<%=request.getContextPath() %>/js/admin/select-ui.min.js"></script>
 <script language="JavaScript" src="<%=request.getContextPath() %>/js/admin/common.js"></script>
 <script type="text/javascript">
