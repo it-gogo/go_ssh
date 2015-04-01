@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <display-name></display-name>	
-  <display-name>北讯软件开发平台</display-name>
+  <display-name>it_gogo_team_work</display-name>
   <listener>
     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
   </listener>

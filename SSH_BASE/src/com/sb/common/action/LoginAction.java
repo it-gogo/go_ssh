@@ -1,13 +1,9 @@
 package com.sb.common.action;
 
 import javax.annotation.Resource;
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpSession;
-
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-
 import com.sb.common.util.ContextUtil;
 import com.sb.common.util.Util;
 import com.sb.core.action.ST2BaseAction;
@@ -18,6 +14,11 @@ import com.sb.sysmanage.dao.TbuserDao;
 @ParentPackage("common")
 @Scope("prototype")
 public class LoginAction extends ST2BaseAction<Tbuser, String> {
+	/**
+	 * @author zhangjf 
+	 * @create_date 2015-3-31 下午7:00:42
+	 */
+	private static final long serialVersionUID = 1L;
 	private Tbuser vo;
 	@Resource
 	private TbuserDao buserDao;
