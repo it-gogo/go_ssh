@@ -8,7 +8,7 @@
 <package name="basePackage" extends="struts-default" >
 
 		<interceptors>
-		    <interceptor name="checkException" class="com.sb.core.Interceptor.ExceptionInterceptor" />
+		    <interceptor name="checkException" class="com.sb.interceptor.ExceptionInterceptor" />
 			<interceptor-stack name="baseStack">
                 <interceptor-ref name="alias" />
                 <interceptor-ref name="servletConfig" />
@@ -35,9 +35,7 @@
                 <interceptor-ref name="workflow">
                     <param name="excludeMethods">input,back,cancel,browse</param>
                 </interceptor-ref>
-                <!-- 
 		        <interceptor-ref name="checkException"/>
-		         -->
             </interceptor-stack>
 		</interceptors>
 		
