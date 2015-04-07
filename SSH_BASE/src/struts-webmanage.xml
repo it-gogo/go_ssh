@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+ "struts-2.0.dtd">
+<struts>
+<!-- 基本信息的拦截器配置 -->
+<package name="webmanage" extends="basePackage" namespace="/webmanage">
+	<interceptors>
+	 	<interceptor name="sessionInterceptor" class="com.sb.interceptor.HSessionInterceptor" />
+		<interceptor-stack name="baseinfoStack">
+		    <interceptor-ref name="sessionInterceptor" />
+			<interceptor-ref name="baseStack" />
+		</interceptor-stack>
+	</interceptors>
+	<!-- 配置默认拦截器栈 -->
+	<default-interceptor-ref name="baseinfoStack" />
+	
+	<!-- 轮播管理 -->
+	<action name="carouselAction"  class="carouselAction" >
+	   <result name="list">/WEB-INF/admin/webmanage/carousel/list.jsp</result>
+	   <result name="edit">/WEB-INF/admin/webmanage/carousel/edit.jsp</result>
+	</action>
+</package>
+
+</struts>
